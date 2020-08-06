@@ -31,7 +31,7 @@ pipeline {
                 success {
                     withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh "docker login -u ${USERNAME} -p ${PASSWORD}"
-                        sh "docker push andrro/enterprise_battleship_matchmaking:latest"
+                        sh "docker push andrro/andrro/enterprise_battleship_matchmaking_multibranch:latest"
                     }
                 }
             }
