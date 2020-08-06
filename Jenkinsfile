@@ -21,7 +21,7 @@ pipeline {
 
         stage('Create Container') {
             steps {
-                sh "docker build -t andrro/enterprise_battleship_matchmaking:latest ."
+                sh "docker build -t andrro/enterprise_battleship_matchmaking_multibranch:latest ."
             }
         }
         }
