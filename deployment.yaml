@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: battleship-game
+  labels:
+    app: battleship
+    service: flask
+spec:
+  selector:
+    matchLabels:
+      app: battleship
+      service: flask
+  template:
+    metadata:
+      labels:
+        app: battleship
+        service: flask
+    spec:
+      containers:
+        - name: enterprise-battleship-game
+          image: andrro/enterprise_battleship_game:latest
+          ports:
+            - containerPort: 34111

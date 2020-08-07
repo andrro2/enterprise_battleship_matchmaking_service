@@ -1,0 +1,42 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "battleship-game",
+    "labels": {
+      "app": "battleship",
+      "build-number": "var_build_number",
+      "service": "flask"
+    }
+  },
+  "spec": {
+    "selector": {
+      "matchLabels": {
+        "app": "battleship",
+        "service": "flask"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "battleship",
+          "build-number": "var_build_number",
+          "service": "flask"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "enterprise-battleship-game",
+            "image": "andrro/enterprise_battleship_game:latest",
+            "ports": [
+              {
+                "containerPort": 34111
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
