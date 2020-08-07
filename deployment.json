@@ -4,20 +4,20 @@
   "metadata": {
     "name": "battleship-matchmaking",
     "labels": {
-      "app": "battleship-matchmaking",
+      "k8s-app": "battleship-matchmaking",
       "build-number": "var_build_number"
     }
   },
   "spec": {
     "selector": {
       "matchLabels": {
-        "app": "battleship-matchmaking"
+        "k8s-app": "battleship-matchmaking"
       }
     },
     "template": {
       "metadata": {
         "labels": {
-          "app": "battleship-matchmaking",
+          "k8s-app": "battleship-matchmaking",
           "build-number": "var_build_number"
         }
       },
