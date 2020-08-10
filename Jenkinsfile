@@ -38,7 +38,7 @@ pipeline {
                         sh "docker login -u ${USERNAME} -p ${PASSWORD}"
                         sh "docker push andrro/enterprise_battleship_matchmaking:latest"
                         sh "sed -i -e 's#${BUILDVAR}#${BUILD_NUMBER}#' deployment.json"
-                        sh "curl https://178.164.199.200:6443/apis/apps/v1/namespaces/default/deployments/battleship-matchmaking  \
+                        sh "curl https://94.21.182.103:6443/apis/apps/v1/namespaces/default/deployments/battleship-matchmaking  \
                         -k -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data @deployment.json --request PUT"
                     }
                 }
