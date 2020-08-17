@@ -1,0 +1,39 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "battleship-matchmaking",
+    "labels": {
+      "k8s-app": "battleship-matchmaking",
+      "build-number": "var_build_number"
+    }
+  },
+  "spec": {
+    "selector": {
+      "matchLabels": {
+        "k8s-app": "battleship-matchmaking"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "k8s-app": "battleship-matchmaking",
+          "build-number": "var_build_number"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "battleship-matchmaking",
+            "image": "andrro/enterprise_battleship_matchmaking:latest",
+            "ports": [
+              {
+                "containerPort": 8300
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
